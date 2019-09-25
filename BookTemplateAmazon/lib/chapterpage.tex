@@ -1,0 +1,62 @@
+% script to create a full page for the chapter showing the chapter title. The second parameter is the label.
+\usepackage{titlesec}
+\usepackage{scrhack}
+
+\newenvironment{chapterpage}[3][]{
+	\renewcommand*{\chapterpagestyle}{empty}
+	\begingroup
+	\chapterbox
+
+	\chapter{#2}\label{#3}
+
+	\begin{center}
+		\psvectorian[height=10mm]{75}
+	\end{center}
+
+    \ifxetex
+	    \vspace*{\fill}
+	\fi
+	\begin{center}
+
+		\ifxetex
+			\begin{minipage}{.85\textwidth}
+		\fi
+
+		#1
+}
+{
+
+		\vspace*{15mm}
+		\ifxetex
+			\end{minipage}
+		\fi
+	\end{center}
+
+	\endgroup
+	\ifxetex
+	    \blankpage
+	\fi
+	\renewcommand*{\chapterpagestyle}{plain}
+	\pagestyle{scrheadings}
+
+}
+
+% A script to finalize the page and add an empty page.
+\usepackage{afterpage}
+\newcommand{\blankpage}{\afterpage{\null\thispagestyle{empty}\nextpage}{\pagestyle{empty}\cleardoublepage}}
+
+% Header and footer configuration
+\usepackage[automark,headsepline]{scrpage2}
+\pagestyle{scrheadings}
+
+% inner and outer head (relating to pages of a book): put chapter/section title in the middle and the page numbers on the sides.
+\ihead[\headmark]{\headmark}\ohead{\pagemark}
+
+% alternating chapter / section titles at the top of the page
+\automark[section]{chapter}
+
+% Make heading of each page italics and small capitals.
+\renewcommand*{\headfont}{\itshape\scshape}
+
+% Name of the chapter (\chapapp), number of the chapter (\thechapter) and no period (\autodot)
+\renewcommand*{\chaptermarkformat}{\chapapp~\thechapter\autodot\enskip}
