@@ -1,0 +1,26 @@
+\documentclass[%
+	12pt,
+	headsepline,
+]{paper}
+
+\usepackage{commands}
+\usepackage{tikzstuff}
+
+\bibliography{others/report.bib}
+
+\author{The Author}
+\title{The Report's Title}
+\subject{The Subject}
+\keywords{Report, LaTeX, Mathematics}
+
+\begin{document}
+\maketitle
+\input{others/abstract}
+\input{sections/example}
+\appendix
+\input{appendix/example}
+\printglossaries
+\nocite{*}
+\addcontentsline{toc}{section}{Literatur}
+\printbibliography
+\end{document}

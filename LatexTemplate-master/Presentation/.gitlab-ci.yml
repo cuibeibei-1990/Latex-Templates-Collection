@@ -1,0 +1,14 @@
+# Continous Integration for LaTeX Documents
+
+build:
+  #tags:
+  #  - gitlab-latex
+  image: toxicore/latex
+  before_script:
+    - source /etc/profile
+    - export TERM="xterm"
+  script:
+    - latexmk -f -lualatex -silent -interaction=nonstopmode presentation.tex
+  artifacts:
+    paths:
+      - "presentation.pdf"

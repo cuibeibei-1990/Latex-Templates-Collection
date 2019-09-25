@@ -1,0 +1,9 @@
+# Continous Integration for LaTeX Documents except MASTER which is the template branch.
+
+build:
+  image: "toxicore/latex"
+  script:
+    - latexmk -f -lualatex -silent -interaction=nonstopmode homework.tex
+  artifacts:
+    paths:
+      - ".build/homework.pdf"

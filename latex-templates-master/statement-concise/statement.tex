@@ -1,0 +1,38 @@
+\documentclass[11pt,letterpaper]{journal}
+\usepackage[hmargin=0.83in,vmargin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+
+\setlength{\topskip}{0mm}\setlength{\parskip}{1em}\setlength{\parindent}{0em}
+\usepackage{enumitem}\setlist{nolistsep}
+\usepackage{natbib}\setlength{\bibsep}{0.0pt}
+\usepackage{url}
+
+\def\mytitle{Title}\def\me{Brandon Amos}
+\title{\vspace*{-15mm}\mytitle\vspace*{-7mm}}\author{\me}\date{\today}
+\usepackage{fancyhdr}\pagestyle{fancy}\lhead{\me}\rhead{\mytitle}
+
+\usepackage{lastpage}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+\begin{document}
+{\bf Introduction.}
+lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy
+eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam
+voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita
+kasd gubergren no sea takimata sanctus est lorem ipsum dolor sit amet lorem
+ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod
+tempor invidunt ut labore et dolore\cite{article}
+magna aliquyam erat sed diam voluptua at
+vero eos et accusam et justo duo dolores et ea rebum stet clita kasd
+gubergren no sea takimata sanctus est lorem ipsum dolor sit amet lorem ipsum
+dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor
+invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero
+
+\vspace*{-9mm}
+{\small
+\renewcommand{\refname}{}
+\bibliographystyle{abbrv}
+\bibliography{references}
+}
+
+\end{document}

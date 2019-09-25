@@ -1,0 +1,21 @@
+\documentclass{presentation}
+\usepackage{commands, tikzstuff}
+
+\hypersetup{
+	pdftitle={Presentation},
+	pdfauthor={The Author},
+	pdfsubject={The Subject},
+	pdfkeywords={Presentation, LaTeX, Mathematics}
+}
+
+\title{Presentation}
+\subtitle{The Subtitle}
+\author{The Author}
+\addbibresource{others/presentation.bib}
+\date{The Date}
+
+\begin{document}
+\maketitle
+\input{sections/example.tex}
+\frame{\nocite{*}\printbibliography}
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[%
+	final,
+	12pt,
+	DIV=11,
+	BCOR=4mm,
+	twoside=false,
+	chapterprefix=true,
+	headinclude=true,
+	footinclude=true,
+	usegeometry=true,
+	headings=big,
+	headheight=24pt,
+	footheight=24pt]{booklet}
+
+\usepackage[top=2.1cm,bottom=2.1cm]{geometry}
+
+\usepackage{commands}
+\bibliography{others/booklet.bib}
+
+\hypersetup{
+	pdftitle={Booklet},
+	pdfauthor={The Author},
+	pdfsubject={Booklet, LaTeX, Mathematics},
+	pdfkeywords={Booklet, LaTeX, Mathematics}
+}
+
+\begin{document}
+\input{others/titlepage.tex}
+\frontmatter
+\input{others/preface.tex}
+\tableofcontents
+\mainmatter
+\input{chapters/example.tex}
+\appendix
+\input{appendix/example}
+\backmatter
+\input{lists/example.tex}
+\printglossaries
+\nocite{*}
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\doublespacing
+\printbibliography
+\singlespacing
+\end{document}

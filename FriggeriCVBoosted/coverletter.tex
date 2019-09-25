@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 2.0 (2019-08-14)
+%
+% This template has been downloaded from:
+% https://github.com/JesperDramsch/friggeri-cv-boosted
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+% Heavy modifications by
+% Jesper Dramsch (jesper@dramsch.net)
+% https://github.com/JesperDramsch/friggeri-cv-boosted
+%
+% Author of Letter Template:
+% Jesper Dramsch (jesper@dramsch.net)
+% https://github.com/JesperDramsch/friggeri-cv-boosted
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[nocolors,noadress]{friggeri-txt}
+%\documentclass[nocolors,noadress]{friggeri-txt}
+
+\usepackage[english]{babel} % Required to compile in Windows
+
+%----------------------------------------------------------------------------------------
+%  PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\firstname}{John}
+\newcommand{\lastname}{Smith}
+\newcommand{\jobposition}{Junior Business Analyst}
+\newcommand{\fromemail}{john@smith.com}
+\newcommand{\fromephone}{+0 (000) 111 1111}
+\newcommand{\subjectline}{Motivational Letter}
+
+\setkomavar{fromaddress}{123 Broadway\\City, State 12345\\Country} % Your address
+\setkomavar{signature}{\firstname~\lastname} % Your name as you want it to appear in the signature 
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+% COVER LETTER CONTENTS
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{ % Address of the company you are applying to
+That Place \\
+That Street 5 \\
+Somehwere}
+
+\opening{Dear Sir or Madam,}
+\paragraph{Lorem}{ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.}\\[6pt]
+\paragraph{Excepteur}{sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}\\[6pt]
+\paragraph{Sed ut}{perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet}\\[6pt]
+\paragraph{V ero }{eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. }
+
+Best Regards\\
+\usekomavar{signature}
+\vspace*{-40pt}
+\end{letter}
+\end{document}

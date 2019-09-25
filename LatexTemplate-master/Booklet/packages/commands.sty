@@ -1,0 +1,138 @@
+\ProvidesPackage{commands}
+
+
+%% GLOSSARIES
+%\setglossarystyle{long4col}
+\renewcommand*{\glspostdescription}{}
+\newglossary[nlg]{notation}{not}{ntn}{Symbolverzeichnis}
+\newcommand{\addgloss}[2]{\newglossaryentry{#1}{type=notation,name=#1,description={#2}}}
+\newcommand{\addglossmath}[3]{\newglossaryentry{#3}{type=notation,name=\ensuremath{#1},description={#2}}}
+\renewcommand{\glstextformat}[1]{\ifcsdef{theglstext}{\theglstext}{#1}}
+\newcommand{\glsmath}[2]{\def\theglstext{#1} \gls{#2} \undef\theglstext}
+\makeglossaries
+
+%% GENERAL
+\newcommand{\Def}[1]{\textbf{#1}}
+
+\addglossmath{\mathbb{N}}{Menge der natürlichen Zahlen ohne Null}{ntn:NaturalNumbers}
+\newcommand{\Nats}{\gls{ntn:NaturalNumbers}}
+\addglossmath{\mathbb{N}_0}{Menge der natürlichen Zahlen und Null}{ntn:NaturalNumbersWithZero}
+\newcommand{\NatsZ}{\gls{ntn:NaturalNumbersWithZero}}
+\addglossmath{\mathbb{Z}}{Menge der ganzen Zahlen}{ntn:IntegerNumbers}
+\newcommand{\Ints}{\gls{ntn:IntegerNumbers}}
+\addglossmath{\mathbb{Q}}{Menge der rationalen Zahlen}{ntn:RationalNumbers}
+\newcommand{\Rats}{\gls{ntn:RationalNumbers}}
+\addglossmath{\mathbb{R}}{Menge der reellen Zahlen}{ntn:RealNumbers}
+\newcommand{\Reals}{\gls{ntn:RealNumbers}}
+\addglossmath{\mathbb{C}}{Menge der komplexen Zahlen}{ntn:ComplexNumbers}
+\newcommand{\Cmplx}{\gls{ntn:ComplexNumbers}}
+
+\addglossmath{{M}^{\times}}{Menge der invertierbaren Elemente}{ntn:SetInvs}
+\newcommand{\Invs}[1]{\glsmath{{#1}^{\times}}{ntn:SetInvs}}
+\addglossmath{\mathrm{Pot}}{Potenzmenge, Menge aller Teilmengen}{ntn:Pot}
+\newcommand{\Pot}[1]{\gls{ntn:Pot}(#1)}
+\addglossmath{\mathrm{Pot}_k}{k-Potenzmenge, Menge aller Teilmengen der Ordnung k}{ntn:PotK}
+\newcommand{\PotK}[2]{\glsmath{\mathrm{Pot}_{#1}(#2)}{ntn:PotK}}
+\addglossmath{\mathrm{Stab}}{Stabilisator}{ntn:Stabilizer}
+\newcommand{\Stab}[2]{\gls{ntn:Stabilizer}_{#1}(#2)}
+\addglossmath{\mathcal{C}}{Kategorie, auch \(\mathcal{D}\), \(\mathcal{E}\), oder ähnlich notiert}{ntn:Cat}
+\newcommand{\Cat}[1]{\glsmath{\mathcal{#1}}{ntn:Cat}}
+\addglossmath{\mathrm{Ob}}{Objekte einer Kategorie}{ntn:Ob}
+\newcommand{\Ob}[1]{\gls{ntn:Ob}(\Cat{#1})}
+\newcommand{\ObC}[1]{\gls{ntn:Ob}({#1})}
+\addglossmath{\mathrm{Hom}}{Menge der Morphismen}{ntn:Hom}
+\newcommand{\Hom}[2]{\gls{ntn:Hom}(#1, #2)}
+\newcommand{\HomC}[3]{\gls{ntn:Hom}_{\Cat{#1}}(#2, #3)}
+\addglossmath{\mathrm{id}}{Identitätsmorphismus}{ntn:Id}
+\newcommand{\Id}[1]{\gls{ntn:Id}_{#1}}
+\addglossmath{\mathcal{F}: \mathcal{C} \to \mathcal{D}}{Funktor von Kategorien \(\Cat{C}\) nach \(\Cat{D}\), auch mit \(\Func{G}\), \(\Func{H}\), oder ähnlich notiert}{ntn:Func}
+\newcommand{\Func}[1]{\glsmath{\mathcal{#1}}{ntn:Func}}
+\addglossmath{{\int}\mathcal{F}}{Kategorie der Funktor-Elemente}{ntn:Elems}
+\newcommand{\Elems}[1]{\glsmath{{\int}\Func{#1}}{ntn:Elems}}
+\addglossmath{\{\star\}}{Einpunktmenge}{ntn:SingSet}
+\newcommand{\1}[0]{\gls{ntn:SingSet}}
+
+%% CONSTRUCTIONS
+\addglossmath{\otimes}{Produkt}{ntn:Prod}
+\newcommand{\Prod}[2]{#1 \gls{ntn:Prod} #2}
+\addglossmath{\oplus}{Koprodukt}{ntn:CoProd}
+\newcommand{\CoProd}[2]{#1 \gls{ntn:CoProd} #2}
+
+%% CATEGORIES
+\addglossmath{\mathrm{Cat}}{Kategorie der kleinen Kategorien}{ntn:CatC}
+\newcommand{\CatC}[0]{\gls{ntn:CatC}}
+\addglossmath{\mathrm{CAT}}{Kategorie aller Kategorien}{ntn:CATC}
+\newcommand{\CATC}[0]{\gls{ntn:CATC}}
+
+\addglossmath{\mathrm{Set}}{Kategorie der Mengen}{ntn:SetC}
+\newcommand{\SetC}[0]{\gls{ntn:SetC}}
+\addglossmath{\mathrm{Set}_{\star}}{Kategorie der Fixpunktmengen}{ntn:FSetC}
+\newcommand{\FSetC}[0]{\gls{ntn:FSetC}}
+
+\addglossmath{\mathrm{Mon}}{Kategorie der Monoide}{ntn:MonC}
+\newcommand{\MonC}[0]{\gls{ntn:MonC}}
+\addglossmath{\mathrm{CMon}}{Kategorie der kommutativen Monoide}{ntn:CMonC}
+\newcommand{\CMonC}[0]{\gls{ntn:CMonC}}
+\addglossmath{\mathrm{AbMon}}{Kategorie der abelschen Monoide}{ntn:AbMonC}
+\newcommand{\AbMonC}[0]{\gls{ntn:AbMonC}}
+
+\addglossmath{\mathrm{Grp}}{Kategorie der Gruppen}{ntn:GrpC}
+\newcommand{\GrpC}[0]{\gls{ntn:GrpC}}
+\addglossmath{\mathrm{CGrp}}{Kategorie der kommutativen Gruppen}{ntn:CGrpC}
+\newcommand{\CGrpC}[0]{\gls{ntn:CGrpC}}
+\addglossmath{\mathrm{AbGrp}}{Kategorie der abelschen Gruppen}{ntn:AbGrpC}
+\newcommand{\AbGrpC}[0]{\gls{ntn:AbGrpC}}
+
+\addglossmath{\mathrm{Rng}}{Kategorie der Rnge}{ntn:RngC}
+\newcommand{\RngC}[0]{\gls{ntn:RngC}}
+\addglossmath{\mathrm{CRng}}{Kategorie der kommutativen Rnge}{ntn:CRngC}
+\newcommand{\CRngC}[0]{\gls{ntn:CRngC}}
+
+\addglossmath{\mathrm{Ring}}{Kategorie der Ringe}{ntn:RingC}
+\newcommand{\RingC}[0]{\gls{ntn:RingC}}
+\addglossmath{\mathrm{CRing}}{Kategorie der kommutativen Ringe}{ntn:CRingC}
+\newcommand{\CRingC}[0]{\gls{ntn:CRingC}}
+
+\addglossmath{\mathrm{Fld}}{Kategorie der Körper}{ntn:FldC}
+\newcommand{\FldC}[0]{\gls{ntn:FldC}}
+
+\newcommand{\ModC}[0]{\mathrm{Mod}}
+\newcommand{\VectC}[0]{\mathrm{Vect}}
+
+% TODO: Check if this is supposed to be
+%\glsaddall
+
+% TODO: Register in some Table
+\newcommand{\TODO}[1]{\texttt{\color{red}TODO: #1}}
+
+% RINGPROOF
+\newcommand{\modulo}[2]{%
+	\FPeval{\result}{trunc(#1-(#2*trunc(#1/#2,0)),0)}\result%
+}
+
+\newcounter{ringproofcounter}
+\newcounter{ringproofcountersize}
+\newenvironment{ringproof}[1]
+{ % begin
+	\par
+	\noindent
+	\setcounter{ringproofcounter}{1}
+	\setcounter{ringproofcountersize}{#1}
+	\begin{itemize}
+}{ % end
+	\noindent
+	\end{itemize}
+}
+\newcommand{\imply}[0]{
+	\item[] \textit{
+		(\alph{ringproofcounter})
+		\(\implies\)
+		\stepcounter{ringproofcounter}
+		\ifnum\the\value{ringproofcounter}>\the\value{ringproofcountersize}
+			\setcounter{ringproofcounter}{1}
+		\fi
+		(\alph{ringproofcounter}):
+	}\\
+}
+
+\endinput

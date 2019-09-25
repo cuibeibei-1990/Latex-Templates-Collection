@@ -1,0 +1,86 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{commands}
+
+%% GENERAL
+\newcommand*{\Def}[1]{\textbf{#1}} % definition styling
+\newcommand{\stcomp}[1]{{#1}^\complement}
+\newcommand*{\pr}[1]{\left(#1\right)} % provides better parentheses in math environments
+\newcommand*{\br}[1]{\left\{#1\right\}} % provides better parentheses in math environments
+\newcommand*{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}} % restriction of morphism
+
+\newcommand*{\Norm}[1]{\left\lVert#1\right\rVert} % norm
+
+\newcommand{\Invs}[1]{{#1}^{\times}} % group of units in set
+\newcommand{\Card}[1]{\ensuremath{ \left| #1 \right| }} % set cardinality
+\newcommand{\IntvN}[1]{{[1..#1]}} % integer valued interval
+
+\newcommand{\textover}[2]{\overset{\mathclap{\strut\text{#1}}}#2} % use for text above relation sign, eg. =, <, >, etc.
+
+\DeclareMathOperator{\Sign}{sgn} % signum
+\DeclareMathOperator{\Id}{id} % identity morphism
+\DeclareMathOperator{\Source}{sc} % source/domain of morphism
+\DeclareMathOperator{\Target}{tg} % target/codomain of morphism
+\DeclareMathOperator{\Image}{im} % image of function
+\DeclareMathOperator{\Pot}{\mathcal{P}} % power set 
+
+%% COMMON SETS
+\newcommand{\Cmplx}[0]{\mathbb{C}}
+\newcommand{\Reals}[0]{\mathbb{R}}
+\newcommand{\Rats}[0]{\mathbb{Q}}
+\newcommand{\Ints}[0]{\mathbb{Z}}
+\newcommand{\Nats}[0]{\mathbb{N}}
+\newcommand{\Sphere}[0]{\mathbb{S}}
+\newcommand{\Hemisphere}[1]{\mathbb{H}_{#1}}
+
+%% COMMON GENERAL STUFF
+% Source: http://www.paultaylor.eu/proofs/QEDdoc.pdf
+\def\qed{{
+	\parfillskip=0pt
+	\widowpenalty=10000
+	\displaywidowpenalty=10000
+	\finalhyphendemerits=0
+	\leavevmode
+	\unskip
+	\nobreak
+	\hfil
+	\penalty50
+	\hskip.2em
+	\null
+	\hfill
+	\textsc{Qed}
+	\par}}
+
+% TODO: Register in some Table
+\newcommand*{\TODO}[1]{\texttt{\color{red}TODO: #1}}
+
+%% RINGPROOF
+\newcommand{\modulo}[2]{%
+	\FPeval{\result}{trunc(#1-(#2*trunc(#1/#2,0)),0)}\result%
+}
+
+\newcounter{ringproofcounter}
+\newcounter{ringproofcountersize}
+\newenvironment{ringproof}[1]
+{ % begin
+	\par
+	\noindent
+	\setcounter{ringproofcounter}{1}
+	\setcounter{ringproofcountersize}{#1}
+	\begin{itemize}
+}{ % end
+	\noindent
+	\end{itemize}
+}
+\newcommand*{\imply}[0]{
+	\item[] \textit{
+	(\alph{ringproofcounter})
+	\(\implies\)
+	\stepcounter{ringproofcounter}
+	\ifnum\the\value{ringproofcounter}>\the\value{ringproofcountersize}
+	\setcounter{ringproofcounter}{1}
+	\fi
+	(\alph{ringproofcounter}):
+	}\\
+}
+
+\endinput

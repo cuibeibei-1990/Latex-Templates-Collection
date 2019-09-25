@@ -1,0 +1,14 @@
+# Continous Integration for LaTeX Documents
+
+build:
+  tags:
+    - gitlab-latex
+  before_script:
+    - source /etc/profile
+    - export TERM="xterm"
+    - mkdir .build ; touch .build/booklet.not
+  script:
+    - latexmk -f -lualatex -silent -interaction=nonstopmode booklet.tex
+  artifacts:
+    paths:
+      - "booklet.pdf"

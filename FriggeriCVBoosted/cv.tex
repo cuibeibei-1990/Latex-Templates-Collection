@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 2.0 (2019-08-14)
+%
+% This template has been downloaded from:
+% https://github.com/JesperDramsch/friggeri-cv-boosted
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+% Heavy modifications by
+% Jesper Dramsch (jesper@dramsch.net)
+% https://github.com/JesperDramsch/friggeri-cv-boosted
+%
+% Author of Letter Template:
+% Jesper Dramsch (jesper@dramsch.net)
+% https://github.com/JesperDramsch/friggeri-cv-boosted
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{.head}
+
+\addbibresource{bibliography.bib} % Specify the bibliography file to include publications
+
+\begin{document}
+
+\header{john}{smith}{junior business analyst} % Your name and current job title/field
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{contact}
+123 Broadway \faMapMarker
+City, State 12345
+Country
+~
++0 (000) 111 1111 \faPhone
++0 (000) 111 1112 \faPhone
+~
+\href{mailto:john@smith.com}{john@smith.com \faEnvelope}
+\href{http://www.smith.com}{http://www.smith.com~\faBookmark}
+\href{http://facebook.com/johnsmith}{fb://jsmith \faFacebook}
+\section{languages}
+\begin{tabular}{r r}
+english&\score{5}
+spanish&\score{4}
+italian&\score{2}\end{tabular}
+\section{programming}
+JavaScript
+Python, C++, PHP
+CSS3 \& HTML5
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/education.tex}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/experience.tex}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/awards.tex}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/communication.tex}
+
+
+%----------------------------------------------------------------------------------------
+%	VOLUNTARY ACTIVITIES SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/volunteer.tex}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/interest.tex}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/publications.tex}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES SECTION
+%----------------------------------------------------------------------------------------
+
+\input{sections/references.tex}
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+
+\end{document}

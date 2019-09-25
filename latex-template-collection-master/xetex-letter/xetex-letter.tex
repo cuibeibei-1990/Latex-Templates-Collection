@@ -1,0 +1,39 @@
+\documentclass{xetex-letter}
+
+% Minion Pro is used as the main font, if you don't
+% have it installed uncomment this line or choose another pretty font
+\setmainfont[Numbers=OldStyle]{Minion Pro}
+
+% senders personal data
+\def \first {Isac}
+\def \last {Asimov}
+\def \street {Random St. 21}
+\def \city {9873 New York}
+
+% recipient
+\def \recipientHighlight {Human Resources}
+\def \recipientRest {Some Company Ltd. \\ Some Street 123 \\ 12345 Some City}
+
+% just for the blindtext
+\usepackage{lipsum} 
+
+\usepackage{polyglossia}
+\setmainlanguage{english}
+
+\begin{document}
+
+% to show the folding marks
+\foldingmarks
+
+\letterstart
+
+\salutation{Dear Sir or Madam,}
+
+\lipsum[1-2]
+
+\closing{Sincerely yours,}
+\enclosure[Attached]{curriculum vit\ae{}}
+
+\letterend
+
+\end{document}
